@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+{% load custom_filters %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/law.css' %}">
+<body>
+
+    <h2>{{ heading }}</h2>
+    
+    <h5>{{ metadata.year }} No. {{ metadata.number }}</h5>
+    <h5>{{ metadata.subject }}</h5>
+    <br>
+    <h5>{{ metadata.title }}</h5>
+
+    <div class="dates"> 
+        {% if dates.made_date != "None" %}
+            <div class="dates-line">
+                <p class="dates-title bold">Made:</p>
+                <p class="dates-date">{{ dates.made_date }}</p>
+            </div>
+        {% endif %}
+
+        {% if dates.coming_into_force_date != "None" %}
+            <div class="dates-line">
+                <p class="dates-title bold">Coming into force:</p>
+                <p class="dates-date">{{ dates.coming_into_force_date }}</p>
+            </div>
+        {% endif %}
+
+        {% if dates.laid_before_parliament_date != "None" %}
+            <div class="dates-line">
+                <p class="dates-title bold">Laid before parliament:</p>
+                <p class="dates-date">{{ dates.laid_before_parliament_date }}</p>
+            </div>
+        {% endif %}
+    </div>
+    
+    <div class='sec_preamble'>
+        {% if secondary_preamble_text %}
+            {% for s in secondary_preamble_text %}
+                <p>{{ s }}</p>
+            {% endfor %}
+        {% endif %}
+    </div>
+
+        
+    <div class="body-content">
+        {% if body_content %}
+            {% for title, provisions in body_content.items %}
+                {% if title != 'Unattributed' %}
+                    <h6>{{ title }}</h6>
+                {% endif %}
+
+                {% for pnumber, ptext in provisions.items %}
+                    <span class="pnumber-space">{{ pnumber }}</span><br>{{ ptext|newline_to_br|safe }}<br><br>
+                {% endfor %}
+                
+            {% endfor %}
+
+            <!-- Handling Unattributed Content -->
+            {% if body_content.Unattributed %}
+                <h6>Other Provisions</h6>
+                {% for pnumber, ptext in body_content.Unattributed.items %}
+                    <span class="pnumber-space">{{ pnumber }}</span><br>{{ ptext|newline_to_br|safe }}<br><br>
+                {% endfor %}
+            {% endif %}
+        {% endif %}
+    </div>
+
+
+    <div class='sign-container'>
+        <div class='sign_date'>
+            {% if signatory_info.DateText %}
+                <p>{{ signatory_info.DateText }}</p>
+            {% endif %}
+        </div>
+
+        <div class='sign_info'>
+        <b>
+            {% if signatory_info.PersonName %}
+                <p>{{ signatory_info.PersonName }}</p>
+            {% endif %}
+            {% if signatory_info.JobTitle %}
+                <p>{{ signatory_info.JobTitle }}</p>
+            {% endif %}
+            {% if signatory_info.Department %}
+                <p>{{ signatory_info.Department }}</p>
+            {% endif %}
+            </b>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="explaranatory-container">
+
+    {% if explanatory_notes %}
+        <div class="explanatory-title">
+            {{ explanatory_notes.Title }}
+            <p>{{ explanatory_notes.Comment }}</p>
+
+            <br>
+        </div>
+        <p>{{ explanatory_notes.para_text|linebreaksbr }}</p>
+        <p>{{ explanatory_notes.Paragraphs|linebreaksbr }}</p>
+        
+
+    {% endif %}
+
+    <br>
+    </div>
+
+    <a class='btn btn-outline-primary btn-sm' href="{% url 'law_retrieve' %}">Go Back</a>
+</body>
+
+{% endblock %}

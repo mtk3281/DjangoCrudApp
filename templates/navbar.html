@@ -1,0 +1,98 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary justify-content-center">
+
+    <a class="navbar-brand main-heading" href="{% url '' %}"> 
+            
+<<<<<<< HEAD
+      &nbsp; MyCrudApp &nbsp; <i class="fa fa-database" aria-hidden="true"></i>
+=======
+      &nbsp; Crud APP
+>>>>>>> 94b488100885d27898d2b4af0c64a63b7a8d2d04
+    
+    </a>
+  
+  
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+  
+    </button>
+  
+  
+      <div class="collapse navbar-collapse text-center" id="navbarNavDropdown">
+  
+        
+        <ul class="navbar-nav mr-auto">
+  
+  
+          &nbsp;     &nbsp;     &nbsp; 
+  
+          {% if user.is_authenticated %}
+  
+            <li class="nav-item">
+        
+              <a class="nav-link" href="{% url 'dashboard' %}">Dashboard &nbsp; <i class="fa fa-home" aria-hidden="true"></i> </a>
+<<<<<<< HEAD
+              {% comment %} <a class="nav-link" href="{% url '' %}">Home &nbsp; <i class="fa fa-home" aria-hidden="true"></i> </a> {% endcomment %}
+=======
+>>>>>>> 94b488100885d27898d2b4af0c64a63b7a8d2d04
+  
+            </li>
+  
+  
+            &nbsp;     &nbsp;     &nbsp; 
+  
+  
+<<<<<<< HEAD
+          <li class="nav-item">
+=======
+            <li class="nav-item">
+>>>>>>> 94b488100885d27898d2b4af0c64a63b7a8d2d04
+  
+              <a class="nav-link" href="{% url 'user-logout' %}">Sign out &nbsp; <i class="fa fa-sign-out" aria-hidden="true"></i> </a>
+  
+            </li>
+  
+  
+        </ul>
+  
+        {% else %}
+  
+        <li class="nav-item">
+  
+          <a class="nav-link" href="{% url 'register' %}"> Register </a>
+  
+        </li>
+  
+  
+        &nbsp;     &nbsp;     &nbsp; 
+  
+  
+        <li class="nav-item">
+  
+          <a class="nav-link" href="{% url 'my-login' %}">Login</a>
+  
+<<<<<<< HEAD
+        </li> 
+=======
+        </li>
+>>>>>>> 94b488100885d27898d2b4af0c64a63b7a8d2d04
+  
+  
+        {% endif %}
+      
+        
+      </div>
+  
+  
+  </nav>
+
+
+

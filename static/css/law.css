@@ -1,0 +1,132 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+h2, h3, h4, h5{
+    text-align: center;
+}
+h6{
+    text-align: left;
+    font-weight:700;
+}
+
+.info-line {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.info-line p {
+    margin: 0;
+}
+
+.explanatory-note {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.signature {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    margin-top: 20px;
+}
+
+.signature div {
+    width: 45%; /* Make sure they align side by side */
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.body-content {
+    padding: 0 20px;
+    margin: 20px 0;
+    max-width: 85%; /* Set a max-width for body content */
+    margin-left: auto; /* Center the div */
+    margin-right: auto; /* Center the div */
+}
+
+.dates {
+    padding: 20px 0; /* Padding at the top and bottom */
+    margin: 0px 270px; /* Add margins to the left and right */
+    text-align: left; /* Align left for better control */
+}
+
+.dates-line {
+    display: flex;
+    justify-content: space-between; /* Space between title and date */
+    margin: 10px 0; /* Margin between each date line */
+}
+
+.dates-title {
+    flex: 1; /* Allow title to take available space */
+    text-align: left; /* Align title to the left */
+}
+
+.dates-date {
+    flex: 1; /* Allow date to take available space */
+    text-align: right; /* Align date to the right */
+}
+
+.sec_preamble{
+    padding: 0 20px;
+    margin: 20px 0;
+    max-width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.pnumber-space {
+    margin-left: 20px; /* Adjust the value to your desired space */
+}
+
+.sign-container {
+    display: flex;             /* Use flexbox layout */
+    align-items: flex-end;    /* Align items to the bottom */
+    justify-content: space-between; /* Optional: spaces out the two divs */
+    max-width: 90%;           /* Set a max-width for the container */
+}
+
+.sign_date {
+    margin-left: 150px; /* Add margin for spacing between the two divs */
+}
+
+.sign_info {
+    text-align: right;  /* Optional: align text to the right */
+    line-height: 0.6;
+}
+
+.explanatory-title{
+    font-weight: bold;
+    text-align: center;
+
+}
+
+.explaranatory-container{
+    padding: 0 20px;
+    margin: 20px 0;
+    max-width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    align: center;
+}
+
+.pnumber-space {
+    padding-left: 20px; /* Adjust padding as needed */
+    font-weight: bold; /* Optional: to emphasize the number */
+}
+
+.pnumber-space {
+    white-space: pre-line; /* Preserves newlines and spaces */
+}
+
+

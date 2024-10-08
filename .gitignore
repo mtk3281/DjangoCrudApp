@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.sqlite3
+.env 
+migrations/
+<<<<<<< HEAD
+venv/
+staticfiles
+*.yml
+=======
+venv/
+>>>>>>> 94b488100885d27898d2b4af0c64a63b7a8d2d04

@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<body>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const dobInput = document.getElementById('dob-input');
+        dobInput.addEventListener('input', function (e) {
+            let value = dobInput.value.replace(/\D/g, ''); 
+            if (value.length > 2) {
+                value = value.slice(0, 2) + '/' + value.slice(2);
+            }
+
+            if (value.length > 5) {
+                value = value.slice(0, 5) + '/' + value.slice(5, 9); // Slice up to 9 to limit year to 4 digits
+            }
+            if (value.length > 10) {
+                value = value.slice(0, 10);
+            }    
+            dobInput.value = value;
+        });
+        });
+    </script>
+
+
+    <div class='container bg-light shadow-md-p-5 form-layout'>
+
+        <h3> create your account </h3>
+        <br>
+        <br>
+        
+        <form method="POST" autocomplete="off"> 
+            {% csrf_token %}
+            {{form|crispy}}
+            <br>
+            <button type='submit' class='btn btn-primary w-100 btn-block p-2'>Create Account </button>
+        </form>
+
+        <br>
+        <div class='text-center'>
+            <a href="{% url 'my-login' %}">Already have an account? Login</a>
+        </div>
+    </div>
+
+    <br>
+
+</body>
+{% endblock %}

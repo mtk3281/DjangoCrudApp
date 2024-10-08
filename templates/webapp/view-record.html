@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<body>
+
+    <div class='card-header'>
+        <h3>{{record.first_name}}  {{record.last_name}}</h3>    
+    </div>
+
+    <div class='card-body'>
+
+        <p><strong> ID: </strong> {{record.id}}</p>
+        <p><strong> Created date: </strong> {{record.created_date}}</p>
+        <p><strong> first_name: </strong>{{record.first_name}}</p>
+        <p><strong> last_name: </strong> {{record.last_name}}</p>
+        <p><strong> email: </strong> {{record.email}}</p>
+        <p><strong> email: </strong> {{record.email}}</p>
+        <p><strong> address: </strong> {{record.address}}</p>
+        <p><strong> city: </strong>{{record.city}}</p>
+        <p><strong> zip_code: </strong> {{record.zip_code}}</p>
+        <p><strong> state: </strong> {{record.state}}</p>
+        <p><strong> country: </strong> {{record.country}}</p>
+
+
+    </div>
+
+    <br>
+    <a class='btn btn-secondary btn-sm' href="{% url 'dashboard' %}">Go back</a>
+    &nbsp;
+    &nbsp;
+    
+    <a class='btn btn-info btn-sm' href="{% url 'update-record' record.id %}">Edit</a>
+    &nbsp;
+    &nbsp;
+    <a class='btn btn-danger btn-sm' href="{% url 'delete-record' record.id %}">Delete</a>
+
+</body>
+{% endblock %}
